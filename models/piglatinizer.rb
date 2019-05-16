@@ -8,8 +8,4 @@ class PigLatinizer
     new_string
   end
 
-  def self.hello
-    puts "Hello"
-  end
-
 end
