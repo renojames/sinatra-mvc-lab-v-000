@@ -8,9 +8,10 @@ class PigLatinizer
   end
 
   def piglatinize
-    text_ary = text.split.rotate(1)
-    new_text = text_ary.join + "ay"
-    new_text
+    text_ary = text.split("")
+    text_ary = text_ary.rotate(1)
+    new_string = text_ary.join + "ay"
+    new_string
   end
 
   def self.hello
