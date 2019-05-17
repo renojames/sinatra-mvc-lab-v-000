@@ -10,13 +10,14 @@ class PigLatinizer
   end
 
   def first_two_consonants?(ary)
+    ary[0] = ary[0].downcase
     consonants = ("a".."z").to_a - ["a", "e", "i", "o", "u"]
     consonants.include?(ary[0]) && consonants.include?(ary[1])
   end
 
-#["h", "e", "l", "l", "o"]
+#["H", "e", "l", "l", "o"]
 
-#["p", "r", "e", "s", "i", "d", "e", "n", "t"]
+#["P", "r", "e", "s", "i", "d", "e", "n", "t"]
 
   def piglatinize(text)
     if starts_with_vowel?(text)
