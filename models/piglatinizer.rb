@@ -39,6 +39,12 @@ class PigLatinizer
     consonants.include?(text_ary[0]) && consonants.include?(text_ary[1]) && consonants.include?(text_ary[2])
   end
 
+
+  def piglatinize_sentence(text)
+    
+  end
+  
+
   # PIGLATINIZE_WORD METHOD
   def piglatinize_word(text)
 
