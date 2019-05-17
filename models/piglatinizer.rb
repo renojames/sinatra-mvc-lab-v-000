@@ -47,6 +47,7 @@ class PigLatinizer
       pl_sentence_ary << piglatinize_word(word)
     end
     new_text = pl_sentence_ary.join(" ")
+    new_text
   end
 
 
