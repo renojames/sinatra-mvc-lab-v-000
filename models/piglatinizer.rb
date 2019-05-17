@@ -41,7 +41,7 @@ class PigLatinizer
 
 
   def piglatinize_sentence(text)
-
+    sentence_ary = text.split(" ")
   end
 
 
