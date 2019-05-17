@@ -31,15 +31,8 @@ class PigLatinizer
 
   def piglatinize(text)
     if starts_with_vowel?(text)
-      text_ary = text.split("")
-      if is_uppercase?(text_ary)
-        text_ary[0] = text_ary[0].downcase
-        new_string = text_ary.join.capitalize + "way"
-        new_string
-      else
-        new_string = text_ary.join + "way"
-        new_string
-      end
+      new_string = text + "way"
+      new_string
     elsif first_three_consonants?(text)
       text_ary = text.split("")
       if is_uppercase?(text_ary)
