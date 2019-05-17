@@ -29,10 +29,14 @@ class PigLatinizer
 
 #["p", "l", "e", "a", "s", "e"]
 
+
+  # PIGLATINIZE METHOD
   def piglatinize(text)
+
     if starts_with_vowel?(text)
       new_string = text + "way"
       new_string
+
     elsif first_three_consonants?(text)
       text_ary = text.split("")
       if is_uppercase?(text_ary)
@@ -45,6 +49,7 @@ class PigLatinizer
         new_string = text_ary.join + "ay"
         new_string
       end
+
     elsif first_two_consonants?(text)
       text_ary = text.split("")
       if is_uppercase?(text_ary)
@@ -53,10 +58,12 @@ class PigLatinizer
         new_string = text_ary.join.capitalize + "ay"
         new_string
       else
+
         text_ary = text_ary.rotate(2)
         new_string = text_ary.join + "ay"
         new_string
       end
+
     else
       text_ary = text.split("")
       if is_uppercase?(text_ary)
@@ -69,7 +76,9 @@ class PigLatinizer
         new_string = text_ary.join + "ay"
         new_string
       end
+
     end
+    # END PIGLATINIZE METHOD
 
   end
 
