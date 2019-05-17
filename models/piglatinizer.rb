@@ -61,9 +61,9 @@ class PigLatinizer
     elsif first_three_consonants?(text)
       text_ary = text.split("")
       if is_uppercase?(text_ary)
-        text_ary[0] = text_ary[0].downcase
+        text_ary[0] = text_ary[0]
         text_ary = text_ary.rotate(3)
-        new_string = text_ary.join.capitalize + "ay"
+        new_string = text_ary.join + "ay"
         new_string
       else
         text_ary = text_ary.rotate(3)
@@ -74,9 +74,9 @@ class PigLatinizer
     elsif first_two_consonants?(text)
       text_ary = text.split("")
       if is_uppercase?(text_ary)
-        text_ary[0] = text_ary[0].downcase
+        text_ary[0] = text_ary[0]
         text_ary = text_ary.rotate(2)
-        new_string = text_ary.join.capitalize + "ay"
+        new_string = text_ary.join + "ay"
         new_string
       else
 
@@ -88,9 +88,9 @@ class PigLatinizer
     else
       text_ary = text.split("")
       if is_uppercase?(text_ary)
-        text_ary[0] = text_ary[0].downcase
+        text_ary[0] = text_ary[0]
         text_ary = text_ary.rotate(1)
-        new_string = text_ary.join.capitalize + "ay"
+        new_string = text_ary.join + "ay"
         new_string
       else
         text_ary = text_ary.rotate(1)
