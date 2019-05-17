@@ -41,9 +41,9 @@ class PigLatinizer
 
 
   def piglatinize_sentence(text)
-    
+
   end
-  
+
 
   # PIGLATINIZE_WORD METHOD
   def piglatinize_word(text)
