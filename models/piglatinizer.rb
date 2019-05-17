@@ -2,6 +2,9 @@
 class PigLatinizer
 
   def piglatinize(text)
+    if sentence?(text)
+      # Iterate over the words in the sentence and piglatinize them
+    end
     piglatinize_word(text)
   end
 
