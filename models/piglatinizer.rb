@@ -1,6 +1,18 @@
 
 class PigLatinizer
 
+  def piglatinize(text)
+    piglatinize_word(text)
+  end
+
+
+  # --- HELPER METHODS --- #
+
+
+  def sentence?(text)
+    text.include?(" ")
+  end
+
   def starts_with_vowel?(text)
     text.downcase.start_with?("a", "e", "i", "o", "u")
   end
@@ -23,15 +35,8 @@ class PigLatinizer
     consonants.include?(text_ary[0]) && consonants.include?(text_ary[1]) && consonants.include?(text_ary[2])
   end
 
-#["H", "e", "l", "l", "o"]
-
-#["P", "r", "e", "s", "i", "d", "e", "n", "t"]
-
-#["p", "l", "e", "a", "s", "e"]
-
-
-  # PIGLATINIZE METHOD
-  def piglatinize(text)
+  # PIGLATINIZE_WORD METHOD
+  def piglatinize_word(text)
 
     if starts_with_vowel?(text)
       new_string = text + "way"
@@ -76,10 +81,8 @@ class PigLatinizer
         new_string = text_ary.join + "ay"
         new_string
       end
-
     end
-    # END PIGLATINIZE METHOD
-
   end
+  # END PIGLATINIZE_WORD METHOD
 
 end
