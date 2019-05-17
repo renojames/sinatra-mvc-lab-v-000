@@ -46,6 +46,7 @@ class PigLatinizer
     sentence_ary.each do |word|
       pl_sentence_ary << piglatinize_word(word)
     end
+    new_text = pl_sentence_ary.join(" ")
   end
 
 
