@@ -16,25 +16,54 @@ class PigLatinizer
     consonants.include?(text_ary[0]) && consonants.include?(text_ary[1])
   end
 
+  def first_three_consonants?(text)
+    text = text.downcase
+    text_ary = text.split("")
+    consonants = ("a".."z").to_a - ["a", "e", "i", "o", "u"]
+    consonants.include?(text_ary[0]) && consonants.include?(text_ary[1]) && consonants.include?(text_ary[2])
+  end
+
 #["H", "e", "l", "l", "o"]
 
 #["P", "r", "e", "s", "i", "d", "e", "n", "t"]
+
+#["p", "l", "e", "a", "s", "e"]
 
   def piglatinize(text)
     if starts_with_vowel?(text)
       text_ary = text.split("")
       if is_uppercase?(text_ary)
         text_ary[0] = text_ary[0].downcase
-        text_ary = text_ary.rotate(1)
         new_string = text_ary.join.capitalize + "way"
         new_string
       else
-        text_ary = text_ary.rotate(1)
         new_string = text_ary.join + "way"
         new_string
       end
+    elsif first_three_consonants?(text)
+      text_ary = text.split("")
+      if is_uppercase?(text_ary)
+        text_ary[0] = text_ary[0].downcase
+        text_ary = text_ary.rotate(3)
+        new_string = text_ary.join.capitalize + "ay"
+        new_string
+      else
+        text_ary = text_ary.rotate(3)
+        new_string = text_ary.join + "ay"
+        new_string
+      end
     elsif first_two_consonants?(text)
-
+      text_ary = text.split("")
+      if is_uppercase?(text_ary)
+        text_ary[0] = text_ary[0].downcase
+        text_ary = text_ary.rotate(2)
+        new_string = text_ary.join.capitalize + "ay"
+        new_string
+      else
+        text_ary = text_ary.rotate(2)
+        new_string = text_ary.join + "ay"
+        new_string
+      end
     else
       text_ary = text.split("")
       if is_uppercase?(text_ary)
