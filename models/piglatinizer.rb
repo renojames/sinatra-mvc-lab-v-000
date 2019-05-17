@@ -9,10 +9,11 @@ class PigLatinizer
     ary[0].upcase == ary[0]
   end
 
-  def first_two_consonants?(ary)
-    ary[0] = ary[0].downcase
+  def first_two_consonants?(text)
+    text = text.downcase
+    text_ary = text.split("")
     consonants = ("a".."z").to_a - ["a", "e", "i", "o", "u"]
-    consonants.include?(ary[0]) && consonants.include?(ary[1])
+    consonants.include?(text_ary[0]) && consonants.include?(text_ary[1])
   end
 
 #["H", "e", "l", "l", "o"]
@@ -32,6 +33,8 @@ class PigLatinizer
         new_string = text_ary.join + "way"
         new_string
       end
+    elsif first_two_consonants?(text)
+
     else
       text_ary = text.split("")
       if is_uppercase?(text_ary)
